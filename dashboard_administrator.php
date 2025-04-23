@@ -3,6 +3,13 @@
 session_start();
 ob_start();
 include 'koneksi.php';
+
+
+
+$user_id = $_SESSION['ID_USER'];
+$QUERY = "SELECT * FROM USER_ROLE WHERE user_id ='$user_id'";
+$rowUserRole = mysqli_fetch_assoc(mysqli_query($koneksi, $QUERY));
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

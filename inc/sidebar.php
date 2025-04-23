@@ -52,6 +52,12 @@
             <i class="bi bi-circle"></i><span>Jurusan</span>
           </a>
         </li>
+        <li>
+          <a href="?page=detailjurusan">
+            <i class="bi bi-circle"></i><span>Details Jurusan</span>
+          </a>
+        </li>
+
       </ul>
     </li><!-- End Tables Nav -->
 
@@ -66,18 +72,32 @@
           </a>
         </li>
         <li>
-          <a href="charts-apexcharts.html">
-            <i class="bi bi-circle"></i><span>ApexCharts</span>
+          <a href="?page=moduls">
+            <i class="bi bi-circle"></i><span>moduls</span>
           </a>
         </li>
         <li>
-          <a href="charts-echarts.html">
-            <i class="bi bi-circle"></i><span>ECharts</span>
+          <a href="?page=detailsmoduls">
+            <i class="bi bi-circle"></i><span>Moduls details</span>
           </a>
         </li>
       </ul>
     </li><!-- End Charts Nav -->
 
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-bar-chart"></i><span>Master Siswa</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="?page=siswa">
+            <i class="bi bi-circle"></i><span>Siswa</span>
+          </a>
+        </li>
+
+
+    </li><!-- End Charts Nav -->
     <!-- <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -100,6 +120,8 @@
         </li>
       </ul>
     </li> -->
+
+
 
 
 

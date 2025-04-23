@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
   $email = $_POST['email'];
   $password = sha1($_POST['password']);
 
-  $login = mysqli_query($koneksi, "SELECT * FROM users WHERE email='$email'");
+  $login = mysqli_query($koneksi, "SELECT * FROM users WHERE email='$email' AND is_active =1");
   //jika email di temukan maka
   if (mysqli_num_rows($login) > 0) {
     //BUAT DATA USER
@@ -17,7 +17,27 @@ if (isset($_POST['login'])) {
       $_SESSION['ID_USER'] = $rowUser['id'];
       $_SESSION['NAME'] = $rowUser['name'];
 
-      header("location:dashboard.php");
+      switch ($rowUser['id']) {
+        case 1:
+          header("Location: admin/dashboard_admin.php");
+          break;
+        case 2:
+          header("Location: pic/dashboard_pic.php");
+          break;
+        case 3:
+          header("Location: instruktur/dashboard_instruktur.php");
+          break;
+        case 4:
+          header("Location: siswa/dashboard_siswa.php");
+          break;
+        case 5:
+          header("Location: dashboard_administrator.php");
+          break;
+        default:
+          header("Location: index.php?login=unauthorized");
+          break;
+      }
+      exit();
     }
   } else {
     header("location:index.php?login=error");

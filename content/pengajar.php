@@ -46,11 +46,14 @@ if (isset($_GET['delete'])) {
                   <td><?php echo $rows['gender'] ?></td>
                   <td><?php echo $rows['address'] ?></td>
                   <td><?php echo $rows['phone'] ?></td>
-                  <td><?php echo $rows['photo'] ?></td>
+                  <td>
+                    <img width="100" src="uploads/<?php echo $rows['photo'] ?>" alt="">
+
+                  </td>
 
                   <td>
-                    <a href="?page=tambah-roles&edit=<?php echo $rows['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="?page=roles&delete=<?php echo $rows['id'] ?>" onclick="return confirm('Gueeee apushhh nichhh ngabbbss')" class="btn btn-danger btn-sm">Deleted</a>
+                    <a href="?page=tambah-pengajar&edit=<?php echo $rows['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="?page=pengajar&delete=<?php echo $rows['id'] ?>" onclick="return confirm('Gueeee apushhh nichhh ngabbbss')" class="btn btn-danger btn-sm">Deleted</a>
                   </td>
                 </tr>
               <?php endforeach ?>

@@ -1,12 +1,12 @@
 <?php
-$query = mysqli_query($koneksi, "SELECT * FROM user_role ORDER BY id DESC ");
+$query = mysqli_query($koneksi, "SELECT * FROM majors_detail ORDER BY id DESC ");
 $row = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 
 if (isset($_GET['delete'])) {
   $id = $_GET['delete'];
-  $delete = mysqli_query($koneksi, "DELETE FROM user_role WHERE id='$id'");
-  header("Location:?page=userrole&notif=success");
+  $delete = mysqli_query($koneksi, "DELETE FROM majors_detail WHERE id='$id'");
+  header("Location:?page=detailjurusan&notif=success");
 }
 ?>
 
@@ -16,18 +16,18 @@ if (isset($_GET['delete'])) {
     <div class="col-sm-12">
       <div class="card">
         <div class="card-header">
-          <h3>Data Users</h3>
+          <h3>Data</h3>
         </div>
         <div class="card-body">
           <div class="mb-3 mt-3">
-            <a href="?page=tambah-userrole" class="btn btn-primary">Create New </a>
+            <a href="?page=tambah-detailjurusan" class="btn btn-primary">Create New </a>
           </div>
           <table class="table table-bordered">
             <thead>
               <tr>
                 <th>No</th>
-                <th>User id</th>
-                <th>Role id</th>
+                <th>user_id</th>
+                <th>instructor_id</th>
               </tr>
             </thead>
             <tbody>
@@ -36,10 +36,11 @@ if (isset($_GET['delete'])) {
                 <tr>
                   <td><?php echo $no++ ?></td>
                   <td><?php echo $rows['user_id'] ?></td>
-                  <td><?php echo $rows['role_id'] ?></td>
+                  <td><?php echo $rows['instructor_id'] ?></td>
+
                   <td>
-                    <a href="?page=tambah-userrole&edit=<?php echo $rows['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="?page=userrole&delete=<?php echo $rows['id'] ?>" onclick="return confirm('Gueeee apushhh nichhh ngabbbss')" class="btn btn-danger btn-sm">Deleted</a>
+                    <a href="?page=tambah-detailjurusan&edit=<?php echo $rows['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="?page=detailjurusan&delete=<?php echo $rows['id'] ?>" onclick="return confirm('Gueeee apushhh nichhh ngabbbss')" class="btn btn-danger btn-sm">Deleted</a>
                   </td>
                 </tr>
               <?php endforeach ?>
